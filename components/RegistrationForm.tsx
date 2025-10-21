@@ -17,6 +17,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { toast } from 'sonner';
 import { Spinner } from "@/components/ui/spinner"
+import Link from 'next/link';
 
 // User registration Zod schema
 const userRegistrationSchema = z
@@ -164,6 +165,8 @@ const RegistrationForm = () => {
                     </div>
                 </form>
             </Form>
+
+            <p className='mt-3 text-right'>একাউন্ট করা আছে? <Link href={'/login'} className='underline'>লগিন করুন</Link></p>
         </div>
     );
 };
