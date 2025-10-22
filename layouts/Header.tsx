@@ -5,6 +5,7 @@ import { IoMdNotifications } from "react-icons/io";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { getCurrentUser } from "@/utils/getCurrentUser";
 import { auth } from "@/auth";
+import { ILogedInUser } from "@/types/userTypes";
 
 const Header = async() => {
 
@@ -30,7 +31,7 @@ const Header = async() => {
                         <IoMdNotifications />
                     </li>
                     <li>
-                        <NavbarDropdown user = {user}>
+                        <NavbarDropdown user = {user as ILogedInUser}>
                             <Avatar>
                                 <AvatarImage className="border-3 rounded-full border-primary cursor-pointer" src={user?.image as string} />
                                 <AvatarFallback>CN</AvatarFallback>

@@ -9,10 +9,12 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { ILogedInUser } from "@/types/userTypes"
 import { signOut } from "next-auth/react"
 import Link from "next/link"
 
-export function NavbarDropdown({children, user}: {children: React.ReactNode, user: any}) {
+
+export function NavbarDropdown({children, user}: {children: React.ReactNode, user: ILogedInUser}) {
 
   const handleLogout = async() => {
     await signOut({callbackUrl: '/'})
