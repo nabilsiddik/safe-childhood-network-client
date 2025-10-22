@@ -6,7 +6,7 @@ import React from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { signIn, useSession } from "next-auth/react"
 
-const Home = () => {
+const Authentication = () => {
 
   const {data: session, status} = useSession()
 
@@ -16,7 +16,7 @@ const Home = () => {
   })
 
   const handleGoogleLogin = () => {
-    signIn('google', { callbackUrl: '/chat' })
+    signIn('google', { callbackUrl: '/home' })
   }
 
   return (
@@ -26,8 +26,8 @@ const Home = () => {
 
         <Button
           onClick={handleGoogleLogin}
-          size="lg"
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-md flex items-center gap-2 bg-white rounded-full py-6 text-black w-8/12 hover:bg-white cursor-pointer"
+          size="lg" 
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-md flex items-center gap-2 bg-white rounded-full py-6 text-black w-10/12 sm:w-8/12 md:w-5/12 lg:w-3/12 hover:bg-white cursor-pointer"
         >
           <div className='relative w-full'>
             <span className='absolute left-0 top-1/2 transform translate-y-[-50%]'>
@@ -43,4 +43,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Authentication

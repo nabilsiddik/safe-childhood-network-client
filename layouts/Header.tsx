@@ -11,7 +11,7 @@ const Header = async() => {
     console.log('loged in user', user)
 
     return (
-        <header className="container mx-auto px-5 py-5 flex items-center justify-between gap-10">
+        <header className="container mx-auto px-5 py-5 flex items-center justify-between gap-10 fixed bg-white w-full z-9999 left-0 right-0">
             <div>
                 {/* logo */}
                 <Image src={'/images/logo/scn-logo.jpg'} width={100} height={100} alt="safe childhood network logo" />
