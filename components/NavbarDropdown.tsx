@@ -9,8 +9,14 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { signOut } from "next-auth/react"
+import Link from "next/link"
 
-export function NavbarDropdown({children}: {children: React.ReactNode}) {
+export function NavbarDropdown({children, user}: {children: React.ReactNode, user: any}) {
+
+  const handleLogout = async() => {
+    await signOut({callbackUrl: '/'})
+  }
 
   return (
     <>
@@ -21,10 +27,16 @@ export function NavbarDropdown({children}: {children: React.ReactNode}) {
         <DropdownMenuContent className="w-80 py-5 px-3" align="end">
           <DropdownMenuGroup>
             <DropdownMenuItem>
-              <h3 className="font-bold text-lg">Hello, নাবিল সিদ্দিক</h3>
+              <h3 className="font-bold text-lg">Hello, {user?.name}</h3>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Button className='w-full cursor-pointer'>Login</Button>
+              {user?.email ? 
+                <Button onClick={handleLogout} className='w-full cursor-pointer'>Logout</Button>
+              : 
+                <Link href={'/'}>
+                  <Button className='w-full cursor-pointer'>Login</Button>
+                </Link>
+              }
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>

@@ -4,11 +4,14 @@ import { FaFacebookMessenger } from "react-icons/fa6";
 import { IoMdNotifications } from "react-icons/io";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { getCurrentUser } from "@/utils/getCurrentUser";
+import { auth } from "@/auth";
 
 const Header = async() => {
 
-    const user = await getCurrentUser()
-    console.log('loged in user', user)
+    const session = await auth()
+    const user = session?.user
+
+    console.log(user)
 
     return (
         <header className="container mx-auto px-5 py-5 flex items-center justify-between gap-10 fixed bg-white w-full z-9999 left-0 right-0">
@@ -27,9 +30,9 @@ const Header = async() => {
                         <IoMdNotifications />
                     </li>
                     <li>
-                        <NavbarDropdown>
+                        <NavbarDropdown user = {user}>
                             <Avatar>
-                                <AvatarImage className="border-3 rounded-full border-primary cursor-pointer" src="https://github.com/shadcn.png" />
+                                <AvatarImage className="border-3 rounded-full border-primary cursor-pointer" src={user?.image as string} />
                                 <AvatarFallback>CN</AvatarFallback>
                             </Avatar>
                         </NavbarDropdown>
