@@ -4,7 +4,6 @@ import Image from "next/image"
 import { FaFacebookMessenger } from "react-icons/fa6";
 import { IoMdNotifications } from "react-icons/io";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { auth } from "@/auth";
 import { ILogedInUser } from "@/types/userTypes";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
@@ -14,7 +13,6 @@ const Header = () => {
     const {data: session} = useSession()
     const user = session?.user
 
-    console.log(user, 'user')
 
     return (
         <header className="container mx-auto px-5 py-5 flex items-center justify-between gap-10 fixed bg-white w-full z-9999 left-0 right-0">

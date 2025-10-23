@@ -10,11 +10,6 @@ const Authentication = () => {
 
   const {data: session, status} = useSession()
 
-  console.log({
-    session,
-    status
-  })
-
   const handleGoogleLogin = () => {
     signIn('google', { callbackUrl: '/home' })
   }

@@ -7,7 +7,6 @@ export const getCurrentUser = async() => {
         })
 
         const data = await res.json()
-        console.log(data)
 
     }catch(err: any){
         console.log('Error while retriving current user')

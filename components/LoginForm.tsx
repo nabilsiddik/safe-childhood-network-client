@@ -62,8 +62,6 @@ const LoginForm = () => {
 
             const data = await res.json();
 
-            console.log(data)
-
             if(data?.success){
                 toast.success('লগিন সফল হয়েছে')
                 form.reset();
