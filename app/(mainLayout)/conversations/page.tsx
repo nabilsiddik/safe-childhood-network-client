@@ -1,6 +1,7 @@
 import { auth } from "@/auth"
 import Conversation from "@/components/Conversation"
-import { IConversation } from "@/types/userTypes"
+import ConversationList from "@/components/ConversationList"
+import { IConversation, IUser } from "@/types/userTypes"
 import Link from "next/link"
 
 const Conversations = async () => {
@@ -14,12 +15,8 @@ const Conversations = async () => {
     const conversations = data?.data
 
     return (
-        <div className="container mx-auto px-5 pt-[120px]">
-            {conversations.map((conversation: IConversation) => {
-                return <Link href={`/conversations/${conversation?._id}`} key={conversation?._id}>
-                    <Conversation conversation={conversation} currentUserEmail={user?.email as string || ''} />
-                </Link>
-            })}
+        <div>
+            <ConversationList conversations = {conversations} user = {user as IUser}/>
         </div>
     )
 }

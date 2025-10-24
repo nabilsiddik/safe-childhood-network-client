@@ -1,44 +1,27 @@
 'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-const ChatInputForm = ({ id, conversationId, sender }: { id: string, conversationId: string, sender: string }) => {
-
+const ChatInputForm = ({ sendMessage, id }: { sendMessage: (msg: string) => void , id: string}) => {
     const [message, setMessage] = useState('')
 
-    const handleSendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSend = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        if (message.trim() === '') return
 
-        const messageData = {
-            conversationId,
-            sender,
-            text: message
-        }
-
-
-        try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/message`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(messageData)
-            })
-            const data = await res.json()
-
-            if(data?.success){
-                setMessage('')
-            }
-
-        } catch (err) {
-            console.log('Error while sending message', err)
-        }
-
+        sendMessage(message)
+        setMessage('')
     }
 
     return (
-        <form id={id} onSubmit={handleSendMessage}>
-            <input onChange={(e) => setMessage(e.target.value)} value={message} name="message" className='w-full focus:outline-none border-0 text-[#515151] font-medium' type="text" placeholder='Type your message ...' />
+        <form id={id} onSubmit={handleSend}>
+            <input
+                type="text"
+                placeholder="Type a message..."
+                value={message}
+                onChange={e => setMessage(e.target.value)}
+                className="w-full focus:outline-none border-0 text-[#515151] font-medium"
+            />
         </form>
     )
 }

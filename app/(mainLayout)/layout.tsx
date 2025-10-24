@@ -8,7 +8,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathName = usePathname()
-  console.log(pathName, 'path')
   const shouldHideHeader = pathName.startsWith('/conversations')
 
   return (

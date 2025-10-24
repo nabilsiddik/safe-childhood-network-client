@@ -18,8 +18,6 @@ const Conversation = async({conversation, currentUserEmail}: {
     console.log('Error while fetching friend user', err)
   }
 
-  console.log(friend, 'fr')
-
   return (
     <div className="py-5 px-5 bg-gray-300 rounded-lg mb-3 flex items-center gap-4">
        <Image className="rounded-full" src={friend?.profilePhoto || '/images/chat_images/user.png'} alt="friend profile phoro" width={70} height={70}/>
