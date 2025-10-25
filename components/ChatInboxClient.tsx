@@ -81,7 +81,7 @@ const ChatInboxClient = ({ messages: initialMessages, user, conversationId }: { 
     }
 
     return (
-        <div className='container mx-auto min-h-screen flex flex-col justify-between relative'>
+        <div className='min-h-screen flex flex-col justify-between relative'>
             <div className='container mx-auto fixed top-0 left-0 right-0 w-full bg-white h-20 flex items-center gap-3 px-5 z-10'>
                 <Image className='rounded-full' src={friend?.profilePhoto || '/images/chat_images/user.png'} width={50} height={50} alt='scn logo' />
                 <h3 className='text-xl font-bold'>{friend?.fullName}</h3>
@@ -97,9 +97,9 @@ const ChatInboxClient = ({ messages: initialMessages, user, conversationId }: { 
                     <ChatInputForm sendMessage={sendMessage} id={'chatForm'} />
                 </div>
                 <div className='flex-1 flex justify-end'>
-                    <Button form='chatForm' type={'submit'} className='bg-transparent hover:bg-transparent border-none cursor-pointer'>
-                        <IoIosSend className='text-5xl text-[#002DE3]' />
-                    </Button>
+                    <button form='chatForm' type={'submit'} className='bg-transparent hover:bg-transparent border-none cursor-pointer'>
+                        <IoIosSend className='text-5xl text-[#002DE3] w-7 h-7' />
+                    </button>
                 </div>
             </div>
 

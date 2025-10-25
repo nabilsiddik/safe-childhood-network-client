@@ -7,7 +7,7 @@ import EventSlide from '@/components/EventSlide';
 const EventSection = () => {
 
   return (
-    <div className='px-10 my-15 bg-[#2A2742] py-15 rounded-lg'>
+    <div className='px-5 py-70 bg-[#2A2742]'>
       <SectionHeading title='আসন্ন ইভেন্ট' classNames='text-white' />
 
       <div>

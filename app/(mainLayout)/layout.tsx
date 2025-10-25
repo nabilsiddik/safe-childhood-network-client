@@ -8,7 +8,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathName = usePathname()
-  const shouldHideHeader = pathName.startsWith('/conversations')
+  const shouldHideHeader = pathName.startsWith('/conversations/')
 
   return (
     <div>

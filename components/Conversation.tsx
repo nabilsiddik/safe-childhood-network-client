@@ -1,22 +1,11 @@
-import { IConversation, IUser } from "@/types/userTypes"
+import { IUser } from "@/types/userTypes"
 import Image from "next/image"
 
-const Conversation = async({conversation, currentUserEmail}: {
-    conversation: IConversation,
-    currentUserEmail: string
+const Conversation = ({friend}: {
+    friend?: IUser
 }) => {
 
-  const friendEmail = conversation.members.find((memberEmail) => memberEmail != currentUserEmail)
-
-  let friend: IUser | null = null
-
-  try{
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/${friendEmail}`)
-    const data = await res.json()
-    friend = data?.data
-  }catch(err){
-    console.log('Error while fetching friend user', err)
-  }
+  if(!friend) return null
 
   return (
     <div className="py-5 px-5 bg-gray-300 rounded-lg mb-3 flex items-center gap-4">

@@ -13,7 +13,7 @@ const ChatInbox = async ({ params }: { params: { id: string } }) => {
     const messages = data?.data
 
     return (
-        <div className='container mx-auto px-5 min-h-screen flex flex-col justify-between relative'>
+        <div className='md:container md:mx-auto md:px-5 min-h-screen flex flex-col justify-between relative'>
             {/* chat list  */}
             <ChatInboxClient messages={messages} user={user as IUser} conversationId={id} />
         </div>
