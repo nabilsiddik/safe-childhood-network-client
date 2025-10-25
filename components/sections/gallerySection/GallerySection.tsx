@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const GallerySection = () => {
     return (
-        <div className="my-15 py-15 -mt-50 bg-white rounded-4xl">
+        <div className="my-15 py-15 -mt-16 bg-white rounded-4xl">
             <SectionHeading title="গ্যালারি" />
 
             <div className="mt-10 grid grid-cols-2 grid-rows-2 gap-5 auto-rows-[200px] px-5">
