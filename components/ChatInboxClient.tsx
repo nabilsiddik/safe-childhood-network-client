@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { IConversation, IMessage, IUser } from '@/types/userTypes'
+import { IMessage, IUser } from '@/types/userTypes'
 import ChatMessagesList from '@/components/ChatMessagesList'
 import ChatInputForm from '@/components/forms/ChatInputForm'
 import { io, Socket } from 'socket.io-client'
@@ -51,13 +51,11 @@ const ChatInboxClient = ({ messages: initialMessages, user, conversationId }: { 
 
     useEffect(() => {
         const getFriend = async () => {
-            let friend: IUser | null = null
             const friendEmail = conversation.find((memberEmail) => memberEmail != user?.email)
             try {
                 const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/${friendEmail}`)
                 const data = await res.json()
                 setFriend(data?.data)
-                console.log(friend, 'friend')
             } catch (err) {
                 console.log('Error while fetching conversation', err)
             }

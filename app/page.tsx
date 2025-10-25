@@ -4,11 +4,9 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import React from 'react'
 import { FcGoogle } from "react-icons/fc";
-import { signIn, useSession } from "next-auth/react"
+import { signIn } from "next-auth/react"
 
 const Authentication = () => {
-
-  const {data: session, status} = useSession()
 
   const handleGoogleLogin = () => {
     signIn('google', { callbackUrl: '/home' })

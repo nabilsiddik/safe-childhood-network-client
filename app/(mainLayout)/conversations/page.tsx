@@ -1,8 +1,6 @@
 import { auth } from "@/auth"
-import Conversation from "@/components/Conversation"
 import ConversationList from "@/components/ConversationList"
-import { IConversation, IUser } from "@/types/userTypes"
-import Link from "next/link"
+import { IUser } from "@/types/userTypes"
 
 const Conversations = async () => {
 
