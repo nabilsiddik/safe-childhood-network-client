@@ -17,7 +17,7 @@ const ChatInboxClient = ({ messages: initialMessages, user, conversationId }: { 
     const [friend, setFriend] = useState<IUser | null>(null)
 
     useEffect(() => {
-        const newSocket = io('http://localhost:5000') // backend port
+        const newSocket = io('https://safe-childhood-network.onrender.com') // backend port
         setSocket(newSocket)
 
         // Join the socket with user's email
