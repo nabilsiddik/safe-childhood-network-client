@@ -29,12 +29,17 @@ const ConversationList = ({ conversations, user }: { conversations: IConversatio
     }, [conversations, user.email])
 
     return (
-        <div className="container mx-auto px-5 pt-[120px]">
-            {conversations.map((conv: IConversation) => (
+        <div className="container mx-auto px-5 pt-[130px]">
+            <div>
+                
+            </div>
+            <div>
+                {conversations.map((conv: IConversation) => (
                 <Link href={`/conversations/${conv._id}`} key={conv._id}>
                     <Conversation friend={friendsMap[conv._id]} />
                 </Link>
             ))}
+            </div>
         </div>
     )
 }
