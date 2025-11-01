@@ -1,10 +1,7 @@
 'use client'
-import { NavbarDropdown } from "@/components/NavbarDropdown";
 import Image from "next/image"
 import { FaFacebookMessenger } from "react-icons/fa6";
 import { IoMdNotifications } from "react-icons/io";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { ILogedInUser } from "@/types/userTypes";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 
@@ -15,7 +12,7 @@ const Header = () => {
 
 
     return (
-        <header className="py-5 fixed bg-white w-full left-0 right-0 z-9999 border-b-3 border-[rgba(235,245,255,1)]">
+        <header className="py-3 fixed bg-white w-full left-0 right-0 z-9999 border-b-3 border-[rgba(235,245,255,1)]">
             <div className="max-w-5xl mx-auto px-5 flex items-center justify-between gap-10">
                 <div>
                     {/* logo */}
@@ -27,12 +24,12 @@ const Header = () => {
                     <ul className="flex items-center gap-5">
                         <Link href={'/conversations'}>
                             <li className="text-2xl w-10 h-10 bg-[#F1F4F5] flex items-center justify-center rounded-full relative cursor-pointer">
-                                <div className="absolute top-[-5px] right-[-5px] bg-red-500 w-5 h-5 flex items-center justify-center rounded-full text-sm text-white">2</div>
+                                {/* <div className="absolute top-[-5px] right-[-5px] bg-red-500 w-5 h-5 flex items-center justify-center rounded-full text-sm text-white">2</div> */}
                                 <FaFacebookMessenger />
                             </li>
                         </Link>
                         <li className="text-2xl w-10 h-10 bg-[#F1F4F5] flex items-center justify-center rounded-full relative cursor-pointer">
-                            <div className="absolute top-[-5px] right-[-5px] bg-red-500 w-5 h-5 flex items-center justify-center rounded-full text-sm text-white">3</div>
+                            {/* <div className="absolute top-[-5px] right-[-5px] bg-red-500 w-5 h-5 flex items-center justify-center rounded-full text-sm text-white">3</div> */}
                             <IoMdNotifications />
                         </li>
                         {/* <li>

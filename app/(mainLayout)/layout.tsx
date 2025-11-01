@@ -10,16 +10,21 @@ export default function RootLayout({
 }>) {
   const pathName = usePathname()
   let shouldHideHeader
+  let shouldHideBottomBar
 
   if(pathName.startsWith('/conversations/') || pathName.startsWith('/account')){
     shouldHideHeader = true
+  }
+
+  if(pathName.startsWith('/conversations/')){
+    shouldHideBottomBar = true
   }
 
   return (
     <div>
         {!shouldHideHeader && <Header/>}
         {children}
-        <BottomBar/>
+        {!shouldHideBottomBar && <BottomBar/>}
     </div>
   );
 }
