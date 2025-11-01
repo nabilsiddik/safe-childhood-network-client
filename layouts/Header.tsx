@@ -4,11 +4,26 @@ import { FaFacebookMessenger } from "react-icons/fa6";
 import { IoMdNotifications } from "react-icons/io";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
+import { IConversation } from "@/types/userTypes";
 
 const Header = () => {
-
+    const [conversations, setConversations] = useState<IConversation[] | []>([])
     const { data: session } = useSession()
     const user = session?.user
+    const adminEmail = process.env.ADMIN_EMAIL
+
+    useEffect(() => {
+        const fetchConversation = async () => {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/conversation/${user?.email || ''}`)
+            const data = await res.json()
+            setConversations(data?.data)
+        }
+
+        fetchConversation()
+    }, [user?.email])
+
+    console.log(conversations[0]?._id, 'my conve')
 
 
     return (
@@ -22,7 +37,7 @@ const Header = () => {
                 </div>
                 <div>
                     <ul className="flex items-center gap-5">
-                        <Link href={'/conversations'}>
+                        <Link href={user?.email === adminEmail? '/conversations' : `/conversations/${conversations[0]?._id}`}>
                             <li className="text-2xl w-10 h-10 bg-[#F1F4F5] flex items-center justify-center rounded-full relative cursor-pointer">
                                 {/* <div className="absolute top-[-5px] right-[-5px] bg-red-500 w-5 h-5 flex items-center justify-center rounded-full text-sm text-white">2</div> */}
                                 <FaFacebookMessenger />
