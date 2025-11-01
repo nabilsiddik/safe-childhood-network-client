@@ -20,7 +20,7 @@ const Authentication = () => {
         <Button
           onClick={handleGoogleLogin}
           size="lg" 
-          className="text-md flex items-center gap-2 bg-white rounded-full py-6 text-black w-10/12 sm:w-8/12 md:w-5/12 lg:w-3/12 hover:bg-white cursor-pointer absolute bottom-10"
+          className="text-md flex items-center gap-2 bg-white rounded-full py-6 text-black w-10/12 sm:w-8/12 md:w-5/12 lg:w-3/12 hover:bg-white cursor-pointer absolute bottom-24"
         >
           <div className='relative w-full'>
             <span className='absolute left-0 top-1/2 transform translate-y-[-50%]'>
