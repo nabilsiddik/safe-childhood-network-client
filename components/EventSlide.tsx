@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const EventSlide = ({ eventImagePath, eventBtnText, eventBtnLink }: { eventImagePath: string, eventBtnText: string, eventBtnLink?: string }) => {
     return (
-        <div className='bg-white rounded-lg p-[15px] mt-6 w-[366px] h-[310px] '>
+        <div className='bg-white rounded-lg p-[15px] mt-6 max-w-[366px] px-3 mx-3 h-[310px] '>
             {/* <div className='w-full h-full' style={{
                 backgroundImage: `url(${eventImagePath})`,
                 backgroundPosition: 'center center',
@@ -16,7 +16,7 @@ const EventSlide = ({ eventImagePath, eventBtnText, eventBtnLink }: { eventImage
             </div> */}
             <Image className='mb-3 rounded-lg mx-auto' src={eventImagePath} alt='event image' width={337} height={226} />
             
-            <div className='flex justify-center pb-3'>
+            <div className='flex justify-center mt-4'>
                 <Link href={eventBtnLink ? eventBtnLink : ''} className='cursor-pointer'>
                     <Button size={'lg'} className='w-[237px] h-9 bg-[#FF7028] rounded-[60px]'>{eventBtnText}</Button>
                 </Link>

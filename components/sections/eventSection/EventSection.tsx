@@ -11,7 +11,7 @@ const EventSection = () => {
       <Image className='mx-auto -mt-10' src={'/images/event_images/event-top.png'} alt='section titile image' width={430} height={169} />
 
       {/* <SectionHeading title='আসন্ন ইভেন্ট' classNames='text-white' /> */}
-      <Image className='mx-auto -mt-18' src={'/images/event_images/event-section-title-image.png'} alt='section titile image' width={352} height={67} />
+      <Image className='mx-auto -mt-16' src={'/images/event_images/event-section-title-image.png'} alt='section titile image' width={352} height={67} />
 
       <div className="bg-[rgba(42,39,66,1)]">
         <Swiper className="mySwiper">
@@ -30,7 +30,7 @@ const EventSection = () => {
         </Swiper>
       </div>
 
-      <Image className='mx-auto z-100 -mt-5' src={'/images/event_images/event-bottom-png.png'} alt='section titile image' width={430} height={169} />
+      <Image className='mx-auto z-100 -mt-12' src={'/images/event_images/event-bottom-png.png'} alt='section titile image' width={430} height={169} />
     </div>
   )
 }
