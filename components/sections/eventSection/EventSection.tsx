@@ -7,11 +7,13 @@ import Image from 'next/image';
 const EventSection = () => {
 
   return (
-    <div className=' py-5 bg-[#2A2742] mx-auto'>
-      {/* <SectionHeading title='আসন্ন ইভেন্ট' classNames='text-white' /> */}
-      <Image className='mx-auto' src={'/images/event_images/event-section-title-image.png'} alt='section titile image' width={352} height={67} />
+    <div className=' mx-auto relative'>
+      <Image className='mx-auto -mt-10' src={'/images/event_images/event-top.png'} alt='section titile image' width={430} height={169} />
 
-      <div>
+      {/* <SectionHeading title='আসন্ন ইভেন্ট' classNames='text-white' /> */}
+      <Image className='mx-auto -mt-18' src={'/images/event_images/event-section-title-image.png'} alt='section titile image' width={352} height={67} />
+
+      <div className="bg-[rgba(42,39,66,1)]">
         <Swiper className="mySwiper">
           <SwiperSlide>
             <EventSlide eventImagePath='/images/event_images/sisimpur.png' eventBtnText='বিস্তারিত জানুন' />
@@ -27,6 +29,8 @@ const EventSection = () => {
           </SwiperSlide>
         </Swiper>
       </div>
+
+      <Image className='mx-auto z-100 -mt-5' src={'/images/event_images/event-bottom-png.png'} alt='section titile image' width={430} height={169} />
     </div>
   )
 }

@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const GallerySection = () => {
     return (
-        <div className="py-5 bg-white rounded-4xl mb-28 max-w-[439px] mx-auto">
+        <div className="py-5 rounded-4xl mb-28 max-w-[439px] mx-auto -mt-14 z-999 relative">
             {/* <SectionHeading title="গ্যালারি" /> */}
             <Image className='mx-auto' src={'/images/gallery_images/gallery-section-title-image.png'} alt='section titile image' width={352} height={67}/>
 
