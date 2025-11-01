@@ -15,8 +15,8 @@ const Header = () => {
 
 
     return (
-        <header className="py-5 fixed bg-white w-full z-9999 left-0 right-0 z-9999">
-            <div className="container mx-auto px-5 flex items-center justify-between gap-10">
+        <header className="py-5 fixed bg-white w-full left-0 right-0 z-9999 border-b-3 border-[rgba(235,245,255,1)]">
+            <div className="max-w-5xl mx-auto px-5 flex items-center justify-between gap-10">
                 <div>
                     {/* logo */}
                     <Link href={'/'}>

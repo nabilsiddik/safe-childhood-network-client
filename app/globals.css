@@ -129,3 +129,8 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.swiper-slide{
+  display: flex!important;
+  justify-content: center!important;
+}

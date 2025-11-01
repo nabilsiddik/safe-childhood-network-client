@@ -1,28 +1,29 @@
 'use client'
-import SectionHeading from '@/components/SectionHeading'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import EventSlide from '@/components/EventSlide';
+import Image from 'next/image';
 
 const EventSection = () => {
 
   return (
-    <div className='px-5 py-30 bg-[#2A2742]'>
-      <SectionHeading title='আসন্ন ইভেন্ট' classNames='text-white' />
+    <div className=' py-5 bg-[#2A2742] mx-auto'>
+      {/* <SectionHeading title='আসন্ন ইভেন্ট' classNames='text-white' /> */}
+      <Image className='mx-auto' src={'/images/event_images/event-section-title-image.png'} alt='section titile image' width={352} height={67} />
 
       <div>
         <Swiper className="mySwiper">
           <SwiperSlide>
-            <EventSlide eventImagePath='/images/event_images/equity-officer.png' eventBtnText='বিস্তারিত জানুন'/>
+            <EventSlide eventImagePath='/images/event_images/sisimpur.png' eventBtnText='বিস্তারিত জানুন' />
           </SwiperSlide>
           <SwiperSlide>
-            <EventSlide eventImagePath='/images/event_images/equity-officer.png' eventBtnText='বিস্তারিত জানুন'/>
+            <EventSlide eventImagePath='/images/event_images/sisimpur.png' eventBtnText='বিস্তারিত জানুন' />
           </SwiperSlide>
           <SwiperSlide>
-            <EventSlide eventImagePath='/images/event_images/equity-officer.png' eventBtnText='বিস্তারিত জানুন'/>
+            <EventSlide eventImagePath='/images/event_images/sisimpur.png' eventBtnText='বিস্তারিত জানুন' />
           </SwiperSlide>
           <SwiperSlide>
-            <EventSlide eventImagePath='/images/event_images/equity-officer.png' eventBtnText='বিস্তারিত জানুন'/>
+            <EventSlide eventImagePath='/images/event_images/sisimpur.png' eventBtnText='বিস্তারিত জানুন' />
           </SwiperSlide>
         </Swiper>
       </div>

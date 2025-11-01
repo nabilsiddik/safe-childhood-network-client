@@ -4,38 +4,21 @@ import Image from "next/image"
 
 const GallerySection = () => {
     return (
-        <div className="my-15 py-15 -mt-16 bg-white rounded-4xl">
-            <SectionHeading title="গ্যালারি" />
+        <div className="py-5 bg-white rounded-4xl mb-28 max-w-[439px] mx-auto">
+            {/* <SectionHeading title="গ্যালারি" /> */}
+            <Image className='mx-auto' src={'/images/gallery_images/gallery-section-title-image.png'} alt='section titile image' width={352} height={67}/>
 
-            <div className="mt-10 grid grid-cols-2 grid-rows-2 gap-5 auto-rows-[200px] px-5">
-                <div className="overflow-hidden rounded-xl">
-                    <Image
-                        className="rounded-xl w-full h-full object-cover hover:scale-105 transition ease-in duration-200"
-                        src="/images/event_images/equity-officer.png"
-                        alt="Gallery image"
-                        width={200}
-                        height={200}
-                    />
+            <div className="mt-10 grid grid-cols-2 grid-rows-2 gap-3 auto-rows-[200px] px-5">
+                <div className="overflow-hidden rounded-xl sm:w-full w-[168px] h-32 bg-[rgba(217,217,217,1)]">
+                    
                 </div>
 
-                <div className="row-span-2 overflow-hidden rounded-xl">
-                    <Image
-                        className="rounded-xl w-full h-full object-cover hover:scale-105 transition ease-in duration-200"
-                        src="/images/event_images/equity-officer.png"
-                        alt="Gallery image"
-                        width={200}
-                        height={200}
-                    />
+                <div className="row-span-2 overflow-hidden rounded-xl sm:w-full w-[168px] bg-[rgba(217,217,217,1)]">
+                    
                 </div>
 
-                <div className="overflow-hidden rounded-xl">
-                    <Image
-                        className="rounded-xl w-full h-full object-cover hover:scale-105 transition ease-in duration-200"
-                        src="/images/event_images/equity-officer.png"
-                        alt="Gallery image"
-                        width={200}
-                        height={200}
-                    />
+                <div className="overflow-hidden rounded-xl sm:w-full w-[168px] h-32 bg-[rgba(217,217,217,1)]">
+                   
                 </div>
             </div>
 
