@@ -14,8 +14,8 @@ const Authentication = () => {
 
   return (
     <div className='bg-secondary min-h-screen relative'>
-      <div className="container mx-auto px-5 flex items-center justify-content-center min-h-screen relative">
-        <Image className='mx-auto' src={'/images/logo/scn-home-logo.jpg'} alt='safe childhood network logo' width={300} height={300} />
+      <div className="container mx-auto px-5 relative min-h-screen">
+        <Image className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' src={'/images/logo/scn-home-logo.jpg'} alt='safe childhood network logo' width={300} height={300} />
 
         <Button
           onClick={handleGoogleLogin}
